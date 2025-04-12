@@ -92,21 +92,22 @@ Description: This document is validating data on a patient registration form.
             <label for="gen">Gender</label>
         </td>
         <td>
+            <label for="male">Male</label>
             <input type="radio"
                     id="male"
-                    name="gender1"
+                    name="gender1\"
                     value="Male"
             >
-            <label for="gender">Male</label>
+            <label for="female">Female</label>
             <input type="radio"
                     id="female"
-                    name="gender2"
+                    name="gender"
                     value="Female"
             >
-            <label for="gender2">Female</label>
+            <label for="other">Other</label>
             <input type="radio"
                     id="other"
-                    name="gender3"
+                    name="gender"
                     value="Other"
             >
             <label for="gender3">Other</label>
@@ -361,11 +362,11 @@ Description: This document is validating data on a patient registration form.
     <!-- Text area to elaborate symtoms -->
     <tr class ="form">
         <td align="right">
-            <label for="brief">If checked any of the above, briefly explain.</label>
+            <label for="description">If checked any of the above, briefly explain.</label>
         </td>
         <td>
-            <textarea id="explain"
-                    name="explain"
+            <textarea id="description"
+                    name="description"
                     rows="4" cols="50"
                     required
             >
