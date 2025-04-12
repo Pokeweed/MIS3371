@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- 
+Program: thank-you3.html
+Author: Tiffany Hoang
+Date created: 2025-04-12
+Date last edited: 2025-04-13
+Version: 3.0
+Description: This document is of a basic patient registration form
+              that will take in data. It has html and css.
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thank You page</title>
+    <!-- Load external CSS styles -->
+        <link rel="stylesheet" href= "mystyle3.css">
+    </head>
+<!-- Header -->
+    <body onload="setup()">
+        <div class="header">
+            <table width="100%">
+              <tr>
+                <td><img id="logo" src="homework1-logo.jpg" alt="Koch-Marshal Clinic" style="width:150px;height:150px"></td>
+              </tr>
+              <tr>
+                <td colspan="2" align="center"><h1>Koch-Marshal Clinic</h1></td>
+              </tr>
+              <tr> 
+                <td valign="bottom" align="right"> Today's date: <span id="today"></span></td>
+              </tr> 
+            </table>
+        </div>
+    <!-- Body -->
+        <div id=body>
+<p>Thank you for your submission<p>
+        </div>
+<p id="outputformdata"></p>
+<script src="script3.js"></script>
+    <script>
+        const d = new Date();
+        let text = d.toLocaleDateString();
+        document.getElementById("today").innerHTML = text;
+    </script>
+
+</body>
+
+</html>
+<!-- End of HW3 -->
