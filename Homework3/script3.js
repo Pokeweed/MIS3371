@@ -52,7 +52,7 @@ function getdata1() {
             /* } */
 
   }
-/* Experimentation...
+/* Experimentation...*/
 var data = document.getElementById("storage").value;
 formoutput = formoutput+"<tr><td>Storage? "+
   data+"</td></tr>";
@@ -62,22 +62,21 @@ formoutput = formoutput+"<tr><td>Storage? "+
       document.getElementById("outputformdata").innerHTML = formoutput;
    }
 }
-/* function getrangedata() {
+ function getrangedata() {
   var slider = document.getElementById("budget");
   document.getElementById("rangedisplay").value = slider;
 }
-*/
 
 /* This version gets the data from the form explicitely by field name. 
 function getdata2()
 */
 
 
-/* These are the subroutines to check inidivudial fields  */
+/* Checks first name to have 1 to 30 characters. Letters, apostrophes and dashes only. */
 function checkfirstname()
     {
         x = document.getElementById("fname").value;
-        if( x.length<2) { 
+        if( x.length < 2) { 
               document.getElementById("name_message").innerHTML = "Name is too short. Two characters minimum.";  
               error_flag = 1;
         }
@@ -91,10 +90,11 @@ function checkfirstname()
               }
         }
     }
+/* Checks middle initial. It is optional so it being blank is okay. Only allows 1 character and no numbers. */
 function checkmiddle()
     {
         x = document.getElementById("midinit").value;
-        if( x.length>0) { 
+        if( x.length > 0) { 
               if (x.match(/[a-zA-Z]/)) {
               document.getElementById("name_message").innerHTML = "";  
             }
@@ -104,10 +104,11 @@ function checkmiddle()
               }
         }
     }
+/* Checks last name to have 1 to 30 characters. Letters, apostrophes and dashes only. */
 function checklastname()
     {
         x = document.getElementById("lname").value;
-        if( x.length<2) { 
+        if( x.length < 2) { 
               document.getElementById("name_message").innerHTML = "Name is too short. Two characters minimum.";
               error_flag = 1;  
         }
@@ -121,6 +122,40 @@ function checklastname()
               }
         }
     }
+
+/* Checks date of birth in the format (MM/DD/YYYY), validates the date range,
+ and nothing in the future or more than 120 years ago.) */
+function checkdob() {
+    var input = document.getElementById(dob).value;
+    var errorMessage = document.getElementById("dobErrorMessage");
+
+    if (!input) {
+        errorMessage.innerHTML = "Please enter your date of birth.";
+        error_flag = 1;
+        return;
+    }
+
+    var dob = new Date(input);
+    var today = new Date();
+    today.setHours(0, 0, 0, 0); // Normalizing today's date
+
+    var age = today.getFullYear() - dob.getFullYear();
+    var month = today.getMonth() - dob.getMonth();
+    
+    if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) {
+        age--; // Adjust if the birthday has not occurred yet this year
+    }
+
+    if (dob > today) {
+        errorMessage.innerHTML = "Date of birth cannot be in the future.";
+        error_flag = 1;
+    } else if (age > 120) {
+        errorMessage.innerHTML = "You cannot be older than 120 years.";
+        error_flag = 1;
+    } else {
+        errorMessage.innerHTML = ""; // Clears message if DOB is valid
+    }
+}
 
 // Deal with password    
 function passwordentry() {

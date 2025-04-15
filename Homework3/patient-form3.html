@@ -144,6 +144,9 @@ Description: This document is validating data on a patient registration form.
             oninvalid="this.setCustomValidity('SSN must be in 000-00-0000 format')"
             required
         </td>
+        <td>
+            <span id="doberrormessage"></span>
+        </td>
     </tr>
     <tr>
         <td colspan="2"><h3>Contact Information</h3></td>
@@ -453,21 +456,21 @@ Description: This document is validating data on a patient registration form.
     <!-- Username-->
     <tr class="form">
         <td align="right">
-            <label for="acc">User ID</label>
+            <label for="userid">User ID</label>
         </td>
         <td>
             <input type="text"
                     size="10"
                     minlength="1"
                     maxlength="20"
-                    id="user1"
-                    name="user1"
+                    id="userid"
+                    name="userid"
                     required
-                    onblur="checkuser1()"
+                    onblur="checkuserid()"
                     oninvalid="this.setCustomValidity('Please put a username.')"
                     oninput="this.setCustomValidity('')"
             >
-        <span id="user1_message"></span>
+        <span id="userid_message"></span>
         </td>
     </tr>
     <!-- Password -->
