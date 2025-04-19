@@ -52,11 +52,11 @@ function getdata1() {
             /* } */
 
   }
-/* Experimentation...*/
+/* Form review */
 var data = document.getElementById("storage").value;
 formoutput = formoutput+"<tr><td>Storage? "+
   data+"</td></tr>";
-/* End of Experiment */
+
    if (formoutput.length>0) { 
       formoutput = formoutput + "</table>";
       document.getElementById("outputformdata").innerHTML = formoutput;
@@ -156,7 +156,31 @@ function checkdob() {
         errorMessage.innerHTML = ""; // Clears message if DOB is valid
     }
 }
+// Checks SSN to be in xxx-xx-xxxx format. In numbers only and automatically adds dashes once 3 digits are typed in.
+function checkssn() {
+  var x = document.getElementById("ssn").value;
+  var phonemessage = document.getElementById("ssn_message");
+  if (x.match(/^\d{3}-\d{2}-\d{4}$/)) {
+      document.getElementById("ssn_message").innerHTML = "";
+  } else {
+      document.getElementById("ssn_message").innerHTML = "Invalid format. Use: 123-45-678";
+      error_flag = 1;
+  }
+} 
+// Checks userid 
+function checkuserid() {
+  function checkUserName(){
+    var x= document.getElementById("userid").value;
+    var x= userNameMessage = document.getElementById("userid_message");
 
+    if(x.match(/^[A-Za-z][A-Za-z0-9]{4,19}$/)){
+        userid_message.innerHTML=" ";
+    }
+    else{
+        userid_message.innerHTML="User id must start with a letter and be at least 5 characters long but not longer than 20"
+    }
+}
+}
 // Deal with password    
 function passwordentry() {
     var passwordoutput;
@@ -180,7 +204,7 @@ function passwordentry() {
     }
     document.getElementById("pass_message2").innerHTML = passwordoutput;
   // Validate numbers
-   if(passwordinput.search(/[0-9]/)<0 ) {   
+   if(passwordinput.search(/[0-9]/) < 0 ) {   
     passwordoutput = "Enter at least 1 number";
     error_flag = 1;
     } else {
@@ -188,7 +212,7 @@ function passwordentry() {
     }
     document.getElementById("pass_message3").innerHTML = passwordoutput;
     // Validate special characters
-   if(passwordinput.search(/[!\@#\$%&*\-_\\.+\(\)]/)<0 ) {   
+   if(passwordinput.search(/[!\@#\$%&*\-_\\.+\(\)]/) < 0 ) {   
     passwordoutput = "Enter at least 1 special character";
     error_flag = 1;
     } else {
@@ -215,18 +239,6 @@ function checkpwd2() {
          error_flag = 1;
       }
     }
-// Check other fields
-function checkssn() {
-    var x = document.getElementById("ssn").value;
-    var phonemessage = document.getElementById("ssn_message");
-    if (x.match(/^\d{3}-\d{2}-\d{4}$/)) {
-        document.getElementById("ssn_message").innerHTML = "";
-    } else {
-        document.getElementById("ssn_message").innerHTML = "Invalid format. Use: 123-45-678";
-        error_flag = 1;
-    }
-} 
-
 
 function checkemail() {
     var x = document.getElementById("email").value;
@@ -295,11 +307,14 @@ function checkstate() {
         checkfname();
         checkmidinit();
         checklname();
+        checkdob();
+        checkssn();
         checkemail();
         checkphone();
         checkadd1();
         checkadd2();
         // others
+        checkuserid();
         passwordentry();
         checkpwd2();
         console.log("Error flag: "+ error_flag);

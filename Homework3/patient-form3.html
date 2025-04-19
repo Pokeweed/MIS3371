@@ -529,6 +529,12 @@ Description: This document is validating data on a patient registration form.
             <input type="reset"
                     value="Clear Form"
             >
+            <input type="button" 
+            name="validate" 
+            id="validate" 
+            value="Validate" 
+            onclick="validateEverything()"
+            >
         </td>
     </tr>
   <!-- Password message area -->
@@ -565,6 +571,13 @@ Description: This document is validating data on a patient registration form.
         document.getElementById("today").innerHTML = text;
     </script>
 
+<!-- Alert box -->
+<div id="alert-box">
+    <div id="alert-content">
+        <h4>Please fill out all required fields</h4>
+        <button id="close-alert">OK</button>
+    </div>
+</div>
 </body>
 <!-- End of body-->
 </html>
