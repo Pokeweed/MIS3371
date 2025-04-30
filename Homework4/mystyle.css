@@ -1,0 +1,44 @@
+/*
+Name: Tiffany Hoang
+File: mystyle.css
+Date created: 2025-02-09
+Date modified: 2023-04-30
+Purpose: Style sheet for HW 1-4
+*/
+ 
+body {
+    background-color:rgb(176,227,230);
+    font-family: monospace;
+ }
+
+ .header {
+    background-color: #1BA1E2;
+    display: flex;
+    padding: 1px;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+ }
+
+ .logo {
+   margin-left: 5px;
+ }
+ 
+
+ .header-text {
+   font-family: Georgia, Sans-Serif;
+ }
+
+   h3 {
+      font-family:Verdana;
+}
+   p {
+    text-align: center;
+ }
+  .footer {
+    background-color: #1BA1E2;
+    display: block;
+    padding: 15px;
+    text-align:right;
+    color: black;
+ }
