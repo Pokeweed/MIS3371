@@ -300,6 +300,22 @@ function checkstate() {
 }
 //    if (document.getElementById("state").length = 0 ) {  error_flag = 1; }
 
+// Alert box
+function showAlert() {
+  var alertBox = document.getElementById("alert-box");
+  var closeAlert = document.getElementById("close-alert");
+
+  alertBox.style.display = "block";
+  closeAlert.onclick = function() {
+      alertBox.style.display = "none";
+  };
+}
+<div id="alert-box">
+    <div id="alert-content">
+        <h4>Please fill out all required fields or any other message you want</h4>
+        <button id="close-alert">OK</button>
+    </div>
+</div>
 // Check everything
     function checkform() 
       {
