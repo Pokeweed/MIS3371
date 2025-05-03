@@ -66,9 +66,7 @@ Description: This document is validating data on a patient registration form.
                     name="fname"
                     required
                     pattern="[A-Z^a-z' -]{2,}"
-                    onblur="checkfname()"
-                    oninvalid="this.setCustomValidity('First name not valid.')"
-                    oninput="this.setCustomValidity('')"
+                    onblur="validatefname()"
                     title="Minimum 2 characters, only letters, spaces, ' allowed."
                     placeholder="First Name"
             >
@@ -111,7 +109,7 @@ Description: This document is validating data on a patient registration form.
             <label for="male">Male</label>
             <input type="radio"
                     id="male"
-                    name="gender1"
+                    name="gender"
                     value="Male"
             >
             <label for="female">Female</label>
@@ -187,6 +185,7 @@ Description: This document is validating data on a patient registration form.
                     onblur="checkadd1()"
                     oninvalid="this.setCustomValidity('At least 1 address line is required.')"
                     oninput="this.setCustomValidity('')"
+                    placeholder="1234 Address Street"
             >
         <span id="add1_message"></span>
         </td>
@@ -201,6 +200,7 @@ Description: This document is validating data on a patient registration form.
             maxlength="30"
             id="add2"
             name="add2"
+            placeholder="Apt/Suite"
             >
             <span id="add2_text">
         </td>
@@ -220,6 +220,7 @@ Description: This document is validating data on a patient registration form.
                     required
                     oninvalid="this.setCustomValidity('You forgot city.')"
                     oninput="this.setCustomValidity('')"
+                    placeholder="Houston"
             >
             <select required name="state" id="state" onblur="checkstate()">
                 <option value="" selected="selected">Select a State</option>
@@ -286,6 +287,7 @@ Description: This document is validating data on a patient registration form.
                     required
                     onivalid="this.setCustomValidity('5 digit postal/zip code required')"
                     oninput="this.setCustomValidity('')"
+                    placeholder="12345"
             >
             <span id="city_message"> <span_id="state_message">
         </td>
