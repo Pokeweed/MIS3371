@@ -80,7 +80,7 @@ Description: This document is validating data on a patient registration form.
                     onblur="checkmidinit()"
                     oninvalid="this.setCustomValidity('Letters only.')"
                     oninput="this.setCustomValidity('')"
-                    placeholder="M'
+                    placeholder="M"
             >
             <input type="text"
                     size="20"
@@ -91,6 +91,8 @@ Description: This document is validating data on a patient registration form.
                     pattern="[A-Z^a-z' -]{2,}"
                     oninput="checklname()"
                     onblur="checklname()"
+                    oninvalid="this.setCustomValidity('Last name not valid.')"
+                    oninput="this.setCustomValidity('')"
                     title="Minimum 2 characters, only letters, spaces, ' allowed."
                     placeholder="Last Name"
             >
@@ -123,7 +125,6 @@ Description: This document is validating data on a patient registration form.
                     name="gender"
                     value="Other"
             >
-            <label for="gender3">Other</label>
         </td>
     </tr>
     <!-- Date of Birth -->

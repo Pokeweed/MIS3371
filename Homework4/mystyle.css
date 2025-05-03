@@ -29,7 +29,8 @@ body {
    font-family: Georgia, Sans-Serif;
  }
 
-   h3 {
+th {
+      text-align: center;
       font-family:Verdana;
 }
    p {
