@@ -25,10 +25,12 @@ Description: This document is validating data on a patient registration form.
                         <img id="logo" src="homework1-logo.jpg" alt="Koch-Marshal Clinic" align="center" width="80px">
                     </div>
                 </td>
+                <td>
                     <h1>Koch-Marshal Clinic</h1>
                 </td>
                 <td valign="bottom" align="right" width="20%">
                     <p>Today's date: <span id="today"></span></p>
+                </td>
             </tr> 
             </table>
         </header>
@@ -42,10 +44,11 @@ Description: This document is validating data on a patient registration form.
 <!-- Form -->
 <form name="signup" id="signup" onreset="removedata1()" action="thank-you.html">
 <center>
-<table class="form">
-    <tr class="form">
-        <h3>Patient Information</h3>
-    </tr>
+    <div class="form">
+    <table>
+        <tr>
+        <th colspan="4">Patient Information</th>
+        </tr>
     <!-- Name -->
     <hr style="width:55%; text-align:left;margin:0">
     <tr class="form">
@@ -66,6 +69,7 @@ Description: This document is validating data on a patient registration form.
                     oninvalid="this.setCustomValidity('First name not valid.')"
                     oninput="this.setCustomValidity('')"
                     title="Minimum 2 characters, only letters, spaces, ' allowed."
+                    placeholder="First Name"
             >
             <input type="text"
                     class="textsize1"
@@ -77,6 +81,7 @@ Description: This document is validating data on a patient registration form.
                     onblur="checkmidinit()"
                     oninvalid="this.setCustomValidity('Letters only.')"
                     oninput="this.setCustomValidity('')"
+                    placeholder="M'
             >
             <input type="text"
                     size="20"
@@ -88,6 +93,7 @@ Description: This document is validating data on a patient registration form.
                     oninput="checklname()"
                     onblur="checklname()"
                     title="Minimum 2 characters, only letters, spaces, ' allowed."
+                    placeholder="Last Name"
             >
         </td>
             <td>
