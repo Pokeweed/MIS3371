@@ -38,9 +38,6 @@ Description: This document is validating data on a patient registration form.
     <span id="welcome1"></span>
     <span id="welcome2"></span>
 </center>
-<!-- Iframe -->
-<div class = "iframe-container">
-    <iframe class = "frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.121889953615!2d-95.35544836640263!3d29.744427951535304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf1e86a9d533%3A0xc4d75fef77711ed5!2s2508%20Bell%20St%2C%20Houston%2C%20TX%2077003!5e1!3m2!1sen!2sus!4v1746297945511!5m2!1sen!2sus" frameborder="0"></iframe>
 
 <!-- Form -->
 <form name="signup" id="signup" onreset="removedata1()" action="thank-you.html">
@@ -567,7 +564,10 @@ Description: This document is validating data on a patient registration form.
     </tr>
 </table>
 </form>
-        </div>
+<!-- Iframe -->
+<div class = "iframe-container">
+    <iframe class = "frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.121889953615!2d-95.35544836640263!3d29.744427951535304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf1e86a9d533%3A0xc4d75fef77711ed5!2s2508%20Bell%20St%2C%20Houston%2C%20TX%2077003!5e1!3m2!1sen!2sus!4v1746297945511!5m2!1sen!2sus" frameborder="0"></iframe>
+</div>
 <!-- Shows entered form data -->
 <p id="outputformdata"></p>
 <!-- Footer -->
@@ -582,13 +582,6 @@ Description: This document is validating data on a patient registration form.
         let text = d.toLocaleDateString();
         document.getElementById("today").innerHTML = text;
     </script>
-
-<!-- Alert box -->
-<div id="alert-box">
-    <div id="alert-content">
-        <h4>Please fill out all required fields</h4>
-        <button id="close-alert">OK</button>
-    </div>
 </div>
 </body>
 <!-- End of body-->
