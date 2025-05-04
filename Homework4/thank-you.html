@@ -42,16 +42,16 @@ Description: This document is of a basic patient registration form
 <main>
   <p>Thank you for your submission<p>
 </main>
-<footer> 
-  <p></p>
+<footer>
+  <p id="footer">&#169 Koch-Marshal | <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact Us!</a></p>
 </footer>
 <script src="script.js"></script>
-    <script>
-        const d = new Date();
-        let text = d.toLocaleDateString();
-        document.getElementById("today").innerHTML = text;
-    </script>
-
+<!-- Today's date -->
+<script>
+  const d = new Date();
+  let text = d.toLocaleDateString();
+  document.getElementById("today").innerHTML = text;
+</script>
  </body>
 
 </html>
