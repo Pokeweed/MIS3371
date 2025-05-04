@@ -28,6 +28,11 @@ header {
    min-height: 100vh;
 }
 
+#today {
+   text-align: left;
+   margin-right: 5px;
+}
+
 main {
    text-align: center;
    flex-grow: 1;
