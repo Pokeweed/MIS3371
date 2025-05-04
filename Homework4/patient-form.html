@@ -50,10 +50,10 @@ Description: This document is validating data on a patient registration form.
         <tr>
         <th colspan="4">Patient Information</th>
         </tr>
+        <th colspan="4"><hr></th>
     <!-- Name -->
-    <hr style="width:55%; text-align:left;margin:0">
-    <tr class="form">
-        <td align="right">
+    <tr>
+        <td class="td1">
             <label for="fname">First, </label>
             <label for="midinit">M.I.,</label>
             <label for="lname"> Last Name</label>
@@ -99,11 +99,9 @@ Description: This document is validating data on a patient registration form.
             <span class= "error" id="lname_message"></span>
         </td>    
     </tr>
-<!-- Gender -->
-    <tr class="form">
-        <td align="right">
-            <label for="gen">Gender</label>
-        </td>
+    <!-- Gender -->
+    <tr>
+        <td class="td1"> <label for="gen">Gender</label></td>
         <td>
             <input type="radio" id="male" name="gender" value="Male">
             <label for="male">Male</label>
@@ -116,10 +114,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Date of Birth -->
-    <tr class="form">
-        <td align="right">
-            <label for="dob">Date of Birth</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="dob">Date of Birth</label></td>
         <td>
             <input type="date"
             size="10"
@@ -127,13 +123,15 @@ Description: This document is validating data on a patient registration form.
             id="dob"
             name="dob"
             required
+            onblur="validatedob()"
+        </td>
+        <td>
+            <span class="error" id="ssn_message"></span>
         </td>
     </tr>
-    <tr class="form">
-        <td align="right">
-            <label for="ssn">SSN</label>
-        </td>
     <!-- Social Security Number -->
+    <tr>
+        <td class = "td1"><label for="ssn">SSN</label></td>
         <td>
             <input type="tel"
             size=11
@@ -143,11 +141,11 @@ Description: This document is validating data on a patient registration form.
             name="ssn"
             placeholder="123-45-6789"
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
-            oninvalid="this.setCustomValidity('SSN must be in 000-00-0000 format')"
+            onblur="validatessn()"
             required
         </td>
         <td>
-            <span id="doberrormessage"></span>
+            <span class="error" id="ssn_message"></span>
         </td>
     </tr>
 </center>
@@ -155,14 +153,11 @@ Description: This document is validating data on a patient registration form.
     <th colspan="4">Contact Information</th>
     </tr>
     <tr>
-        <td colspan="2"><hr style="width:100%; text-align:left;margin:0">
-        </td>
+        <td colspan="2"><hr style="width:100%; text-align:left;margin:0"></td>
     </tr>
-    <tr class="form">
-        <td align="right">
-        <!-- Address -->
-            <label for="add1">Address 1</label>
-        </td>
+ <!-- Address -->
+    <tr>
+        <td class="td1"> <label for="add1">Address 1</label></td>
         <td>
             <input type="text"
                     size="20"
@@ -194,8 +189,8 @@ Description: This document is validating data on a patient registration form.
             <span id="add2_text">
         </td>
     </tr>
-    <tr class="form">
-        <td align="right">
+    <tr>
+        <td class="td1">
             <label for="city">City, </label>
             <label for="State">State, </label>
             <label for="zip">Zipcode</label>
@@ -282,10 +277,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Email -->
-    <tr class="form">
-        <td align="right">
-            <label for="email">Email</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="email">Email</label></td>
         <td>
             <input type="email"
             id="email"
@@ -301,10 +294,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Phone -->
-    <tr class="form">
-        <td align="right">
-             <label for="phone">Phone#</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="phone">Phone#</label></td>
         <td>
             <input type="tel"
             size="12"
@@ -316,7 +307,6 @@ Description: This document is validating data on a patient registration form.
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             oninvalid="this.setCustomValidity('Phone number must be in 000-000-0000 format')"
             oninput="this.setCustomValidity('')"
-            
             >
         </td>
     </tr>
@@ -328,10 +318,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Rest of body like reasons for visit -->
-    <tr class="form">
-        <td align="right">
-             <label for="please">Please check reason for visit.</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="please">Please check reason for visit.</label></td>
         <td>
             <input type="checkbox"
                     id="reason1"
@@ -370,10 +358,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Text area to elaborate symtoms -->
-    <tr class ="form">
-        <td align="right">
-            <label for="description">If checked any of the above, briefly explain.</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="description">If checked any of the above, briefly explain.</label></td>
         <td>
             <textarea id="description"
                     name="description"
@@ -384,10 +370,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Range slider to ask patient for feeling -->
-    <tr class="form">
-        <td align="right">
-            <label for="feeling">How are you feeling? Rate from 1 to 10. (10 being good.)</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="feeling">How are you feeling? Rate from 1 to 10. (10 being good.)</label></td>
         <td align="left">
             &nbsp;1
             <input type="range"
@@ -416,10 +400,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Radio buttons for insurance and vax -->
-    <tr class="form">
-        <td align="right">
-            <label for="insur">Is patient covered by insurance?</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="insur">Is patient covered by insurance?</label></td>
         <td>
             <input type="radio"
             id="insurance1"
@@ -434,8 +416,8 @@ Description: This document is validating data on a patient registration form.
             >
             <label for="insurance2">No</label>
         </td>
-    <tr class="form">
-        <td align="right">
+    <tr>
+        <td class="td1">
             <label for="vax">Is patient vaccinated?</label>
         </td>
         <td>
@@ -461,10 +443,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Username-->
-    <tr class="form">
-        <td align="right">
-            <label for="userid">User ID</label>
-        </td>
+    <tr>
+        <td class="td1"><label for="userid">User ID</label></td>
         <td>
             <input type="text"
                     size="10"
@@ -481,9 +461,8 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
     <!-- Password -->
-    <tr class="form">
-        <td align="right">
-            <label for="pwd1">Password</label>
+    <tr>
+        <td class = "td1"> <label for="pwd1">Password</label>
         </td>
         <td>
             <input type="password"
@@ -492,20 +471,18 @@ Description: This document is validating data on a patient registration form.
                     id="pwd1"
                     name="pwd1"
                     required
-                    onfocus="checkpwd1()"
-                    oninput="checkpwd1()"
-                    onblur="checkpwd1()"
+                    onfocus="validatepwd()"
+                    oninput="validatepwd()"
+                    onblur="validatepwd()"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                     title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             >
-            <span id="pwd1_text"></span>
+            <span class="error" id="pwd1_message"></span>
         </td>
     </tr>
     <!-- Confirm Password-->
-    <tr class="form">
-        <td align="right">
-            <label for="pwd2">Confirm Password</label>
-        </td>
+    <tr>
+        <td class = "td1"> <label for="pwd2">Confirm Password</label></td>
         <td>
             <input type="password"
                     size="10"
@@ -514,36 +491,59 @@ Description: This document is validating data on a patient registration form.
                     name="pwd2"
                     placeholder="Re-enter Password"
                     required
-                    onfocus="checkpwd2()"
-                    oninput="checkpwd2()"
-                    onblur="checkpwd2()"
+                    onfocus="confirmpwd2()"
+                    oninput="confirmpwd2()"
+                    onblur="confirmpwd2()"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                     title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             >
-            <span id="pwd2_text"></span>
+            <span class= "error" id="pwd2_message"></span>
         </td>
     </tr>
+
+    <tr>
+        <td class = "td1"><label for= "remember-me">Remember Me</label></td>
+        <td>
+            <input type="checkbox"
+            id="remember-me"
+            name="remember-me"
+            checked
+            >
+        </td>
+    </tr>
+
     <!-- Submit, review & reset buttons -->
-    </tr class="form">
-        <td colspan="2" align="center">
-            <input type="button" 
+    </tr>
+        <td class = "td1" colspan="4">
+            <center>
+                <input type="reset"
+                    name="reset"
+                    id="reset"
+                    value="Clear Form"
+                >
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" 
+                    name="review"
+                    id="review"
                     value="Review"
                     onclick='getdata1()'
-            >
-            <input type="submit"
-                    value="Submit"
-            >
-            <input type="reset"
-                    value="Clear Form"
-            >
-            <input type="button" 
-            name="validate" 
-            id="validate" 
-            value="Validate" 
-            onclick="validateEverything()"
-            >
+                >
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" 
+                name="validate" 
+                id="validate" 
+                value="Validate" 
+                onclick="validateEverything()"
+                >
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit"
+                value="Submit"
+                >
+            </center>
         </td>
     </tr>
+    </table>
+</div>
   <!-- Password message area -->
     <tr class="form">
         <td>&nbsp</td><td id="pass_message1">&nbsp</td>
@@ -560,7 +560,6 @@ Description: This document is validating data on a patient registration form.
     <tr class="form">
         <td>&nbsp</td><td id="pass_message5">&nbsp</td>
     </tr>
-</table>
 </form>
 <!-- Iframe -->
 <div class = "iframe-container">
