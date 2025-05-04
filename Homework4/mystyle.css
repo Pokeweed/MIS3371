@@ -48,11 +48,15 @@ th {
    p {
     text-align: center;
  }
-.footer {
+footer {
     background-color: #1BA1E2;
+    position: flex;
     width: 100%;
     bottom: 0;
     height: 2rem;
-    text-align: right;
-    position:fixed;
+ }
+
+ #footer {
+   text-align: right;
+   margin-right: 10px;
  }
