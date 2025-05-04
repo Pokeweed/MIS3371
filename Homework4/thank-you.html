@@ -17,25 +17,34 @@ Description: This document is of a basic patient registration form
         <link rel="stylesheet" href= "mystyle.css">
     </head>
 <!-- Header -->
-    <body onload="setup()">
-        <div class="header">
-            <table width="100%">
-              <tr>
-                <td><img id="logo" src="homework1-logo.jpg" alt="Koch-Marshal Clinic" style="width:150px;height:150px"></td>
-              </tr>
-              <tr>
-                <td colspan="2" align="center"><h1>Koch-Marshal Clinic</h1></td>
-              </tr>
-              <tr> 
-                <td valign="bottom" align="right"> Today's date: <span id="today"></span></td>
-              </tr> 
-            </table>
-        </div>
+ <body onload="setup()">
+  <header>
+    <table width="100%">
+    <tr>
+        <td valign="top" align="left" width="20%">
+            <div class="image">
+                <img id="logo" src="homework1-logo.jpg" alt="Koch-Marshal Clinic" align="center" width="80px">
+            </div>
+        </td>
+
+        <td>
+            <h2>Koch-Marshal Clinic</h2>
+        </td>
+
+        <td valign="bottom" align="right" width="20%">
+           <p>Today's date: <span id="today"></span></p>
+        </td>
+    </tr> 
+    </table>
+  </header>
     <!-- Body -->
-        <div id=body>
-<p>Thank you for your submission<p>
-        </div>
-<p id="outputformdata"></p>
+<br>
+<main>
+  <p>Thank you for your submission<p>
+</main>
+<footer> 
+  <p></p>
+</footer>
 <script src="script.js"></script>
     <script>
         const d = new Date();
@@ -43,7 +52,7 @@ Description: This document is of a basic patient registration form
         document.getElementById("today").innerHTML = text;
     </script>
 
-</body>
+ </body>
 
 </html>
 <!-- End of HW4 -->
