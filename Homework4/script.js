@@ -271,10 +271,10 @@ function confirmPwd() {
     pwd2 = document.getElementById("pwd2").value;
     
     if (pword1 !== pword2) {
-        document.getElementById("pwd2-error").innerHTML = "Passwords do not match";
+        document.getElementById("pwd2_message").innerHTML = "Passwords do not match";
         return false;
      } else {
-        document.getElementById("pwd2-error").innerHTML = "Passwords match";
+        document.getElementById("pwd2_message").innerHTML = "Passwords match";
         return true;
      }
     }
