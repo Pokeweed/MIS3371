@@ -46,20 +46,34 @@ form {
 }
 
 th {
-      text-align: center;
-      font-family:Verdana;
+   text-align: center;
+   font-family:Verdana;
 }
-   p {
-    text-align: center;
+p {
+ text-align: center;
  }
-footer {
-    background-color: #1BA1E2;
-    width: 100%;
-    bottom: 0;
-    display: block;
-    padding: 15px;
+foot
+er {
+   background-color: #1BA1E2;
+   width: 100%;
+   bottom: 0;
+   display: block;
+   padding: 15px;
  }
-
  #footer {
    text-align: right;
+ }
+
+ #alert-box {
+   position:fixed;
+   z-index: 9999;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+ }
+
+ .error {
+   color:red;
  }

@@ -67,7 +67,7 @@ Description: This document is validating data on a patient registration form.
                     name="fname"
                     required
                     pattern="[a-zA-Z']{1,30}"
-                    onblur="validatefname()"
+                    onblur="validateFname()"
                     title="Minimum 1 character, only letters, dashes and apostrophes allowed."
                     placeholder="First Name"
             >
@@ -79,7 +79,7 @@ Description: This document is validating data on a patient registration form.
                     id="midinit"
                     name="midinit"
                     pattern="[A-Z^a-z- ]{0,1}"
-                    onblur="validatemidinit()"
+                    onblur="validateMidinit()"
                     placeholder="M"
             >
             <span class= "error" id="midinit_message"></span>
@@ -92,7 +92,7 @@ Description: This document is validating data on a patient registration form.
                     name="lname"
                     required
                     pattern="[a-zA-Z']{1,30}"
-                    onblur="validatelname()"
+                    onblur="validateLname()"
                     title="Minimum 1 character, only letters, dashes, apostrophes allowed."
                     placeholder="Last Name"
             >
@@ -121,7 +121,7 @@ Description: This document is validating data on a patient registration form.
             id="dob"
             name="dob"
             required
-            onblur="validatedob()"
+            onblur="validateDob()"
             >
             <span class="error" id="dob_message"></span>
         </td>
@@ -139,7 +139,7 @@ Description: This document is validating data on a patient registration form.
             title="Numbers only"
             placeholder="123-45-6789"
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
-            onblur="validatessn()"
+            onblur="validateSsn()"
             required
             >
             <span class="error" id="ssn_message"></span>
@@ -164,7 +164,7 @@ Description: This document is validating data on a patient registration form.
                     name="add1"
                     required
                     title="Please enter your address"
-                    onblur="checkadd1()"
+                    onblur="validateAdd1()"
                     placeholder="1234 Address Street"
             >
              <span class="error" id="add1_message"></span>
@@ -197,7 +197,7 @@ Description: This document is validating data on a patient registration form.
                     id="city"
                     name="city"
                     required
-                    onblur="validatecity()"
+                    onblur="validateCity()"
                     placeholder="Houston"
             >
             <span class="error" id="city_message"></span>
@@ -265,7 +265,7 @@ Description: This document is validating data on a patient registration form.
                     pattern="^\d{5}(-\d{4})?$"
                     title="numbers and a dash only"
                     required
-                    onblur="validatezip()"
+                    onblur="validateZip()"
                     placeholder="12345"
             >
             <span class="error" id="zip_message"></span>
@@ -281,7 +281,7 @@ Description: This document is validating data on a patient registration form.
             placeholder="name@domain.tld"
             required
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
-            onblur="validateemail()"
+            onblur="validateEmail()"
             >
             <span class="error" id="email_message"></span>
         </td>
@@ -295,7 +295,7 @@ Description: This document is validating data on a patient registration form.
             name="phone"
             placeholder="012-345-6789"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
-            onblur="validatephone()"
+            onblur="validatePhone()"
             >
             <span class="error" id="phone_message"></span>
         </td>
@@ -309,7 +309,7 @@ Description: This document is validating data on a patient registration form.
     </tr>
     <!-- Rest of body like reasons for visit -->
     <tr>
-        <td class="td1"><label for="please">Please check reason for visit.</label></td>
+        <td class="td1"><label for="reason">Please check reason for visit.</label></td>
         <td>
             <input type="checkbox"
                     id="reason1"
@@ -392,7 +392,7 @@ Description: This document is validating data on a patient registration form.
     </tr>
     <!-- Radio buttons for insurance and vax -->
     <tr>
-        <td class="td1"><label for="insur">Is patient covered by insurance?</label></td>
+        <td class="td1"><label for="insurance">Is patient covered by insurance?</label></td>
         <td>
             <input type="radio"
             id="insurance1"
@@ -438,13 +438,12 @@ Description: This document is validating data on a patient registration form.
         <td class="td1"><label for="userid">User ID</label></td>
         <td>
             <input type="text"
-                    size="10"
                     minlength="5"
                     maxlength="20"
                     id="userid"
                     name="userid"
                     required
-                    onblur="validateuserid()"
+                    onblur="validateUserid()"
                     title="Please enter a username."
             >
             <span class="error" id="userid_message"></span>
@@ -456,14 +455,13 @@ Description: This document is validating data on a patient registration form.
         </td>
         <td>
             <input type="password"
-                    size="10"
                     minlength="8"
                     id="pwd"
                     name="pwd"
                     required
-                    onfocus="validatepwd()"
-                    oninput="validatepwd()"
-                    onblur="validatepwd()"
+                    onfocus="validatePwd()"
+                    oninput="validatePwd()"
+                    onblur="validatePwd()"
                     title="Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             >
             <span class="error" id="pwd_message"></span>
@@ -474,14 +472,13 @@ Description: This document is validating data on a patient registration form.
         <td class = "td1"> <label for="pwd2">Confirm Password</label></td>
         <td>
             <input type="password"
-                    size="10"
                     minlength="8"
                     id="pwd2"
                     name="pwd2"
                     placeholder="Re-enter Password"
                     required
-                    onfocus="confirmpwd()"
-                    oninput="confirmpwd()"
+                    onfocus="confirmPwd()"
+                    oninput="confirmPwd()"
                     onblur="confirmpwd()"
                     title="Please re-enter your password"
             <span class= "error" id="pwd2_message"></span>
@@ -513,14 +510,14 @@ Description: This document is validating data on a patient registration form.
                     name="review"
                     id="review"
                     value="Review"
-                    onclick='reviewinput()'
+                    onclick='reviewInput()'
                 >
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="button" 
-                name="validate" 
-                id="validate" 
-                value="Validate" 
-                onclick="validateEverything()"
+                    name="validate" 
+                    id="validate" 
+                    value="Validate" 
+                    onclick="validateEverything()"
                 >
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="submit"
@@ -532,28 +529,24 @@ Description: This document is validating data on a patient registration form.
     </table>
 </div>
   <!-- Password message area -->
-    <tr class="form">
-        <td>&nbsp</td><td id="pass_message1">&nbsp</td>
-    </tr>
-    <tr class="form">
-        <td>&nbsp</td><td id="pass_message2">&nbsp</td>
-    </tr>
-    <tr class="form">
-        <td>&nbsp</td><td id="pass_message3">&nbsp</td>
-    </tr>
-    <tr class="form">
-        <td>&nbsp</td><td id="pass_message4">&nbsp</td>
-    </tr>
-    <tr class="form">
-        <td>&nbsp</td><td id="pass_message5">&nbsp</td>
-    </tr>
+  <div class="pwd-texts">
+    <span id="msg1"></span> <br/>
+    <span id="msg2"></span> <br/>
+    <span id="msg3"></span> <br/>
+    <span id="msg4"></span> <br/>
+    <span id="msg5"></span> <br/>
+    <span id="msg6"></span> <br/>
+    <span id="msg7"></span> <br/>
+    <span id="pwd2_message"></span>
+</div>
+<center>
+    <p id="showInput"></p>
+</center>
 </form>
 <!-- Iframe -->
 <div class = "iframe-container">
-    <iframe class = "frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.121889953615!2d-95.35544836640263!3d29.744427951535304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf1e86a9d533%3A0xc4d75fef77711ed5!2s2508%20Bell%20St%2C%20Houston%2C%20TX%2077003!5e1!3m2!1sen!2sus!4v1746297945511!5m2!1sen!2sus" frameborder="0"></iframe>
+    <iframe class = "frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.121889953615!2d-95.35544836640263!3d29.744427951535304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf1e86a9d533%3A0xc4d75fef77711ed5!2s2508%20Bell%20St%2C%20Houston%2C%20TX%2077003!5e1!3m2!1sen!2sus!4v1746297945511!5m2!1sen!2sus" frameborder="0" title="Clinic Location"></iframe>
 </div>
-<!-- Shows entered form data -->
-<p id="outputformdata"></p>
 <!-- Footer -->
 <footer>
      <p id="footer">&#169 Koch-Marshal | <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact Us!</a></p>
@@ -569,7 +562,7 @@ Description: This document is validating data on a patient registration form.
 <div id="alert-box">
     <div id="alert-content">
         <h4>Please fill out required fields</h4>
-        <button id="close-alert">OK</button>
+        <button id="close-alert" type="button">OK</button>
     </div>
 </div>
 
