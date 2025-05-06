@@ -239,7 +239,7 @@ function validateUserid() {
         return false;
     }
 
-    let regex = /^[a-zA-Z0-9_-]+$/;
+    const regex = /^[a-zA-Z0-9_-]+$/;
     if (!regex.test(userid)) {
         document.getElementById("userid_message").innerHTML = "User ID can only have letters, numbers, underscores and dashes. No spaces.";
         return false;
