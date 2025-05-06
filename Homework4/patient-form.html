@@ -295,7 +295,7 @@ Description: This document is validating data on a patient registration form.
             id="phone"
             name="phone"
             placeholder="012-345-6789"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+            pattern="^\d{3}-\d{3}-\d{4}$"
             onblur="validatePhone()"
             >
             <span class="error" id="phone_message"></span>
