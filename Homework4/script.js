@@ -4,13 +4,6 @@ File: script.js
 Dated Created: 2025-03-08
 Date Modified: 2025-04-30
 Purpose: Validate data on form
-*/ 
-let error_flag = 0;
-function setup() {
-  var error_flag = 0;
-  console.log(error_flag);
-}
-/* 
 This subroutine takes the data names and entered data from the form.
 */
 //dynamic date
