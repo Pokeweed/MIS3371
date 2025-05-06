@@ -193,7 +193,7 @@ Description: This document is validating data on a patient registration form.
         <td>
             <input type="text"
                     size="10"
-                    min="2"
+                    minlength="2"
                     maxlength="30"
                     id="city"
                     name="city"
@@ -480,8 +480,9 @@ Description: This document is validating data on a patient registration form.
                     required
                     onfocus="confirmPwd()"
                     oninput="confirmPwd()"
-                    onblur="confirmpwd()"
+                    onblur="confirmPwd()"
                     title="Please re-enter your password"
+            >
             <span class= "error" id="pwd2_message"></span>
         </td>
     </tr>
@@ -497,7 +498,7 @@ Description: This document is validating data on a patient registration form.
         </td>
     </tr>
 
-    <!-- Submit, review & reset buttons -->
+    <!-- Submit, review, validate & reset buttons -->
     </tr>
         <td class = "td1" colspan="4">
             <center>
