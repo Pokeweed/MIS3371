@@ -43,7 +43,7 @@ Description: This document is validating data on a patient registration form.
 </center>
 
 <!-- Form -->
-<form name="signup" id="signup" onreset="removedata1()" action="thank-you.html">
+<form name="signup" id="signup" action="thank-you.html">
 <center>
     <div class="form">
     <table>
@@ -140,6 +140,7 @@ Description: This document is validating data on a patient registration form.
             placeholder="123-45-6789"
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
             onblur="validateSsn()"
+            oninput="formatSsn()"
             required
             >
             <span class="error" id="ssn_message"></span>
@@ -510,10 +511,10 @@ Description: This document is validating data on a patient registration form.
                     name="review"
                     id="review"
                     value="Review"
-                    onclick='reviewInput()'
+                    onclick="reviewInput()"
                 >
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="button" 
+                <input type="button"
                     name="validate" 
                     id="validate" 
                     value="Validate" 

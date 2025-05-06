@@ -111,14 +111,31 @@ function validateDob() {
         return true;
       }
   }
+  function formatSSN() {
+    let input = document.getElementById("ssn");
+    let value = input.value.replace(/\D/g, ''); // Remove non-digits
+
+    if (value.length > 9) {
+      value = value.slice(0, 9); // Limit to 9 digits
+    }
+
+    // Format: XXX-XX-XXXX
+    let formatted = value;
+    if (value.length > 5) {
+      formatted = value.slice(0, 3) + '-' + value.slice(3, 5) + '-' + value.slice(5);
+    } else if (value.length > 3) {
+      formatted = value.slice(0, 3) + '-' + value.slice(3);
+    }
+
+    input.value = formatted;
+  }
 // Checks SSN to be in xxx-xx-xxxx format. In numbers only and automatically adds dashes once 3 digits are typed in.
 function validateSsn() {
     const ssn = document.getElementById("ssn").value;
     const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
 
     if (!ssnR.test(ssn)) {
-        document.getElementById("ssn_message").innerHTML = 
-"Please enter a valid SSN";
+        document.getElementById("ssn_message").innerHTML = "Please enter a valid SSN";
         return false;
     } else {
         document.getElementById("ssn_message").innerHTML = "";
