@@ -234,7 +234,7 @@ function validateUserid() {
         return false;
     }
 
-    if (!isNaN(userid.charAt(0))) {
+    if (/^\d/.test(userid)) {
         document.getElementById("userid_message").innerHTML = "User ID cannot start with a number";
         return false;
     }
